@@ -3,7 +3,6 @@ package services
 import (
 	"database/sql"
 	"errors"
-	"fmt"
 	"time"
 
 	"github.com/sebsvt/ATNL001/logs"
@@ -27,12 +26,15 @@ func NewUserService(userRepo repositories.UserRepository, authSrv AuthService) U
 func (srv userService) CreateUserAccount(newUser CreateNewUserRequest) (*UserResposne, error) {
 
 	// checking email is already in used
-	_, err := srv.userRepo.FromEmail(newUser.Email)
-	if err != nil {
-		fmt.Println(err)
-		if err == sql.ErrNoRows {
-			return nil, ErrUserDoesNotExists
-		}
+	existsUser, err := srv.userRepo.FromEmail(newUser.Email)
+
+	if existsUser != nil {
+		logs.Error(ErrUserEmailAlreadyInUse)
+		return nil, ErrUserEmailAlreadyInUse
+	}
+
+	if err != nil && err != sql.ErrNoRows {
+		logs.Error(err)
 		return nil, err
 	}
 

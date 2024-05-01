@@ -3,3 +3,16 @@
 {"level":"error","timestamp":"2024-04-29T12:22:22.905+0700","msg":"sql: no rows in result set"}
 {"level":"error","timestamp":"2024-04-29T12:56:09.361+0700","msg":"sql: no rows in result set"}
 {"level":"error","timestamp":"2024-04-29T12:57:06.063+0700","msg":"sql: no rows in result set"}
+{"L":"ERROR","timestamp":"2024-04-29T16:40:57.923+0700","M":"token has invalid claims: token is expired"}
+{"L":"ERROR","timestamp":"2024-04-29T16:42:33.821+0700","M":"token signature is invalid: signature is invalid"}
+{"L":"ERROR","timestamp":"2024-04-29T17:04:37.884+0700","M":"Config File \"app\" Not Found in \"[C:\\\\Users\\\\vithc\\\\OneDrive\\\\Desktop\\\\poc\\\\ATNL001\\\\backend]\""}
+{"L":"ERROR","timestamp":"2024-04-29T17:04:50.173+0700","M":"pq: SSL is not enabled on the server"}
+{"L":"ERROR","timestamp":"2024-04-29T17:05:16.269+0700","M":"Config File \"app\" Not Found in \"[C:\\\\Users\\\\vithc\\\\OneDrive\\\\Desktop\\\\poc\\\\ATNL001\\\\backend]\""}
+{"L":"ERROR","timestamp":"2024-04-29T17:05:20.376+0700","M":"pq: SSL is not enabled on the server"}
+{"L":"ERROR","timestamp":"2024-04-29T17:05:20.681+0700","M":"pq: SSL is not enabled on the server"}
+{"L":"ERROR","timestamp":"2024-04-29T17:05:30.312+0700","M":"Config File \"app\" Not Found in \"[C:\\\\Users\\\\vithc\\\\OneDrive\\\\Desktop\\\\poc\\\\ATNL001\\\\backend]\""}
+{"L":"ERROR","timestamp":"2024-04-29T17:05:58.290+0700","M":"Config File \"config\" Not Found in \"[C:\\\\Users\\\\vithc\\\\OneDrive\\\\Desktop\\\\poc\\\\ATNL001\\\\backend]\""}
+{"L":"ERROR","timestamp":"2024-05-01T23:26:45.927+0700","M":"pq: duplicate key value violates unique constraint \"users_email_key\""}
+{"L":"ERROR","timestamp":"2024-05-01T23:28:35.956+0700","M":"email already in use"}
+{"L":"ERROR","timestamp":"2024-05-01T23:28:57.723+0700","M":"read tcp [::1]:49698->[::1]:5432: wsarecv: An established connection was aborted by the software in your host machine."}
+{"L":"ERROR","timestamp":"2024-05-01T23:29:26.345+0700","M":"email already in use"}
