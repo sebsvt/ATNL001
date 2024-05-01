@@ -28,6 +28,7 @@ func main() {
 	userAPI := api.Group("/users")
 	userAPI.Get("/:id", userHandler.GetUserFromID)
 	userAPI.Post("/", userHandler.CreateNewUserAccount)
+	userAPI.Post("/sign-in", userHandler.Login)
 
 	app.Listen(":8000")
 

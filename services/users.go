@@ -16,4 +16,5 @@ type UserResposne struct {
 type UserService interface {
 	CreateUserAccount(newUser CreateNewUserRequest) (*UserResposne, error)
 	GetUser(id int) (*UserResposne, error)
+	SignIn(email string, password string) (string, error)
 }

@@ -83,3 +83,21 @@ func (srv userService) GetUser(id int) (*UserResposne, error) {
 		LastName:  user.LastName,
 	}, nil
 }
+
+func (srv userService) SignIn(email, password string) (string, error) {
+	user, err := srv.userRepo.FromEmail(email)
+	if err != nil {
+		return "", ErrInvalidCredential
+	}
+
+	if !srv.authSrv.VerifyPassword(password, user.HashedPassword) {
+		return "", ErrInvalidCredential
+	}
+
+	accessToken, err := srv.authSrv.GenerateToken(user.ID, user.Email)
+	if err != nil {
+		return "", ErrInvalidCredential
+	}
+
+	return accessToken, nil
+}

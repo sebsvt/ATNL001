@@ -37,3 +37,25 @@ func (h userHandler) GetUserFromID(c *fiber.Ctx) error {
 	}
 	return c.JSON(user)
 }
+
+type LoginSchme struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
+func (h userHandler) Login(c *fiber.Ctx) error {
+	var credentials LoginSchme
+	if err := c.BodyParser(&credentials); err != nil {
+		return err
+	}
+
+	accessToken, err := h.userSrv.SignIn(credentials.Email, credentials.Password)
+	if err != nil {
+		return err
+	}
+
+	return c.JSON(fiber.Map{
+		"access_token": accessToken,
+		"type":         "Bearer",
+	})
+}
